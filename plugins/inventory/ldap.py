@@ -119,7 +119,7 @@ port: 3268
 # Provides explicit user, will use the current Kerberos ticket if no credential
 # is provided.
 username: domain-user@DOMAIN.COM
-password: Password123!
+password: "{{ lookup('ansible.builtin.env', 'LDAP_PASSWORD') }}"
 
 # Only allow Kerberos authentication.
 auth_protocol: kerberos
